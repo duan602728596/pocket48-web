@@ -1,0 +1,35 @@
+- var style = css('./live');
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(http-equiv='Window-target' content='_top')
+    link(rel='stylesheet', href='/style/live.css')
+    link(rel='shortcut icon' href='/image/favicon.ico')
+    link(rel='icon' href='/image/favicon.jpg' type='image/jpeg')
+    title <%= info.title %> - pocket48
+  body
+    div(class=style.main)
+      | <% if (replay) { %>
+      p(class=style.replay) 回放生成中
+      | <% } else { %>
+      div(class=style.videoBox)
+        video#video(class=style.video poster!='/proxy/source3<%= info.coverPath %>' controls)
+      h1(class=style.title) <%= info.title %>
+      div
+        | <% if (info.liveType === 1) { %>
+        em(class=style.zhibo) 直播
+        | <% } else { %>
+        em(class=style.diantai) 电台
+        | <% } %>
+        span(class=style.name) <%= info.userName %>
+      | <% } %>
+    | <% if (!replay) { %>
+    script!= `window.__INITIAL_STATE__ = {"info":<%- infoStr %>}`
+    script(src='/script/es6-promise.min.js')
+    script(src='/script/regenerator-runtime.js')
+    script(src='/script/flv.min.js')
+    script(src='/script/live.js')
+    | <% } %>

@@ -1,0 +1,21 @@
+# node
+node_modules
+npm-debug.log
+package-lock.json
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# webstorm
+.idea
+
+# build
+dist
+src/statics/style/*.json
+
+# https
+*.crt
+*.key
+
+.DS_Store

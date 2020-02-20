@@ -1,0 +1,78 @@
+{
+  "name": "pocket48-web",
+  "scripts": {
+    "build:dev": "rimraf dist && cross-env NODE_ENV=development gulp --gulpfile scripts/devGulpfile.js",
+    "build:pro": "rimraf dist && cross-env NODE_ENV=production gulp --gulpfile scripts/proGulpfile.js",
+    "start:dev": "cross-env NODE_ENV=development node dist/server/index.js",
+    "start:pro": "cross-env NODE_ENV=production node dist/server/index.js",
+    "start:https": "cross-env NODE_ENV=production KEY=server.key CERT=server.crt node dist/server/index.js",
+    "eslint": "eslint ./ --fix"
+  },
+  "dependencies": {
+    "@bbkkbkk/http-proxy": "^1.17.0",
+    "@bbkkbkk/koa-compress": "^3.1.0",
+    "@koa/router": "^8.0.8",
+    "core-js": "^3.6.4",
+    "cross-env": "^7.0.0",
+    "ejs": "^3.0.1",
+    "http-proxy-middleware": "^1.0.0",
+    "iltorb": "^2.4.5",
+    "koa": "^2.11.0",
+    "koa-connect": "^2.0.1",
+    "koa-static-cache": "^5.1.2",
+    "module-alias": "^2.2.2",
+    "node-fetch": "^2.6.0",
+    "node-media-server": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-do-expressions": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/plugin-proposal-numeric-separator": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/plugin-proposal-pipeline-operator": "^7.8.3",
+    "@babel/plugin-proposal-throw-expressions": "^7.8.3",
+    "@babel/plugin-syntax-bigint": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/runtime-corejs3": "^7.8.4",
+    "babel-eslint": "^10.0.3",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.1.0",
+    "es6-promise": "^4.2.8",
+    "eslint": "^6.8.0",
+    "flv.js": "^1.5.0",
+    "fs-extra": "^8.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.2.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "node-sass": "^4.13.1",
+    "postcss-modules": "^1.5.0",
+    "pug": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "terser": "^4.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": "eslint"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

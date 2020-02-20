@@ -1,0 +1,30 @@
+# node
+node_modules
+npm-debug.log
+package-lock.json
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# webstorm
+.idea
+
+# project
+.editorconfig
+.eslintignore
+.eslintrc.yml
+.eslintrc.js
+.gitignore
+
+# build
+build
+buildServer
+dist
+dist-server
+
+# https
+dev.crt
+dev.key
+
+.DS_Store

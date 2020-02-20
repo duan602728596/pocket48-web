@@ -1,0 +1,51 @@
+- var style = css('./index');
+- var className = [style.noLive, style.liveList, style.liveListDl, style.liveListDt, style.liveListDd, style.zhibo, style.diantai, style.link, style.name];
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(http-equiv='Window-target' content='_top')
+    link(rel='stylesheet', href='/style/index.css')
+    link(rel='shortcut icon' href='/image/favicon.ico')
+    link(rel='icon' href='/image/favicon.jpg' type='image/jpeg')
+    title pocket48
+  body
+    div(class=style.main)
+      // header
+      header(class=style.header)
+        a(class=style.github href='https://duan602728596.github.io' target='_blank') https://duan602728596.github.io
+        button#reset-btn(class=style.btn type='button') 刷新列表
+        span#loading(class=style.loading) 加载中...
+      // 结果
+      div#layout
+        | <% if (liveList.length === 0) { %>
+        div(class=style.noLive) 暂无直播
+        | <% } else { %>
+        // 直播列表
+        div(class=style.liveList)
+          | <% liveList.forEach(function(item){ %>
+          dl(class=style.liveListDl)
+            dt(class=style.liveListDt)
+              a(href!='/live/<%= item.liveId %>?'
+              + 'title=<%= item.title %>&coverPath=<%= encodeURIComponent(item.coverPath) %>'
+                target='_blank')
+                img(src!='/proxy/source3<%= item.coverPath %>' alt!='<%= item.userInfo.nickname %>')
+            dd(class=style.liveListDd)
+              a(href!='/live/<%= item.liveId %>?'
+              + 'title=<%= item.title %>&coverPath=<%= encodeURIComponent(item.coverPath) %>'
+                target='_blank') <%= item.title %>
+              div(class=style.link)
+                | <% if (item.liveType === 1) { %>
+                em(class=style.zhibo) 直播
+                | <% } else { %>
+                em(class=style.diantai) 电台
+                | <% } %>
+                b(class=style.name) <%= item.userInfo.nickname %>
+          | <% }) %>
+        | <% } %>
+    script!= `window.__INITIAL_STATE__ = ${ JSON.stringify({ className }) };`
+    script(src='/script/es6-promise.min.js')
+    script(src='/script/regenerator-runtime.js')
+    script(src='/script/index.js')
