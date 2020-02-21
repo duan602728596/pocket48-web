@@ -36,7 +36,11 @@ function liveRouter(router, templateDir) {
       }
 
       // 推流
-      if (!childMap.id) {
+      if (childMap[id]) {
+        childMap[id].timer = setTimeout(() => {
+          childMap[id]?.child?.kill?.();
+        }, 120000);
+      } else {
         const processArgs = [
           '-re',
           '-i',
@@ -108,7 +112,7 @@ function liveRouter(router, templateDir) {
 
       if (childMap[id]) {
         childMap[id].timer = setTimeout(() => {
-          child?.kill?.();
+          childMap[id]?.child?.kill?.();
         }, 120000);
       }
 
