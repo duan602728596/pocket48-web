@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-  app: [
+  apps: [
     {
       name: 'pocket48-web',
       script: 'dist/server/index.js',
