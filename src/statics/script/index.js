@@ -43,7 +43,7 @@
           html += `<dl class="${ style.liveListDl }">
             <dt class="${ style.liveListDt }">
               <a href="/live/${ item.liveId }?${ query }" target="_blank">
-                <img src="/proxy/source3${ item.coverPath }" alt="${ item.nickname }" loading="lazy">
+                <img src="https://source3.48.cn${ item.coverPath }" alt="${ item.nickname }" loading="lazy">
               </a>
             </dt>
             <dd class="${ style.liveListDd }">
