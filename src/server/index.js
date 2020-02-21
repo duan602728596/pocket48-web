@@ -29,7 +29,7 @@ async function main() {
 
   /* 创建http服务 */
   http.createServer(app.callback())
-    .listen(isDev ? 7070 : 7075);
+    .listen(isDev ? 7070 : 80);
 
   /* https */
   if (isHttps) {
@@ -43,7 +43,7 @@ async function main() {
     };
 
     http2.createSecureServer(httpsConfig, app.callback())
-      .listen(isDev ? 7071 : 7076);
+      .listen(isDev ? 7071 : 443);
   }
 
   /* 视频流服务 */
