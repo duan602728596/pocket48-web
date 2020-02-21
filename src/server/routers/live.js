@@ -36,7 +36,7 @@ function liveRouter(router, templateDir) {
       }
 
       // 推流
-      if (!(id in childMap)) {
+      if (!childMap.id) {
         const processArgs = [
           '-re',
           '-i',
@@ -103,7 +103,7 @@ function liveRouter(router, templateDir) {
     const { liveId } = ctx.params;
     const id = String(liveId);
 
-    if (id in childMap) {
+    if (childMap.id) {
       clearTimeout(childMap[id]?.timer);
 
       if (childMap[id]) {
