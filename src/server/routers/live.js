@@ -37,6 +37,7 @@ function liveRouter(router, templateDir) {
 
       // 推流
       if (childMap[id]) {
+        clearTimeout(childMap[id]?.timer);
         childMap[id].timer = setTimeout(() => {
           childMap[id]?.child?.kill?.();
         }, 120000);
