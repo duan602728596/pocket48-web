@@ -31,7 +31,7 @@ html
               a(href!='/live/<%= item.liveId %>?'
               + 'title=<%= item.title %>&coverPath=<%= encodeURIComponent(item.coverPath) %>'
                 target='_blank')
-                img(src!='/proxy/source3<%= item.coverPath %>' alt!='<%= item.userInfo.nickname %>')
+                img(src!='/proxy/source3<%= item.coverPath %>' alt!='<%= item.userInfo.nickname %>' loading='lazy')
             dd(class=style.liveListDd)
               a(href!='/live/<%= item.liveId %>?'
               + 'title=<%= item.title %>&coverPath=<%= encodeURIComponent(item.coverPath) %>'
