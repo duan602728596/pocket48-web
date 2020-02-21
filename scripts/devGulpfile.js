@@ -16,7 +16,7 @@ function pugProject() {
     .pipe(plumber())
     .pipe(pug({
       pretty: true,
-      locals: { css, classNames }
+      locals: { css, classNames, timeStr: '' }
     }))
     .pipe(gulp.dest(files.pug[1]));
 }

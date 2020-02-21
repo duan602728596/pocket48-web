@@ -7,7 +7,7 @@ html
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     meta(http-equiv='Window-target' content='_top')
-    link(rel='stylesheet', href='/style/index.css')
+    link(rel='stylesheet', href='/style/index.css' + timeStr)
     link(rel='shortcut icon' href='/image/favicon.ico')
     link(rel='icon' href='/image/favicon.jpg' type='image/jpeg')
     title pocket48
@@ -48,4 +48,4 @@ html
     script!= `window.__INITIAL_STATE__ = ${ JSON.stringify({ className }) };`
     script(src='/script/es6-promise.min.js')
     script(src='/script/regenerator-runtime.js')
-    script(src='/script/index.js')
+    script(src='/script/index.js' + timeStr)

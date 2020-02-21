@@ -11,7 +11,7 @@ const { files, babelNodeConfig, babelConfig, css, classNames } = require('./util
 function pugProject() {
   return gulp.src(files.pug[0])
     .pipe(pug({
-      locals: { css, classNames }
+      locals: { css, classNames, timeStr: `?t=${ new Date().getTime() }` }
     }))
     .pipe(gulp.dest(files.pug[1]));
 }
