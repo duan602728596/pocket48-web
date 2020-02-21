@@ -19,8 +19,22 @@
     text-decoration: underline
 
 .btn
+  -webkit-appearance: button
   margin-right: 12px
+  padding: 4px 15px
+  font-size: 14px
+  border: 1px solid transparent
+  border-radius: 2px
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .015)
+  background-color: #722ed1
+  color: #fff
+  outline: none
   cursor: pointer
+  transition: all 0.3s
+
+  &:hover
+    border-color: #9254de
+    background-color: #9254de
 
 .loading
   visibility: hidden

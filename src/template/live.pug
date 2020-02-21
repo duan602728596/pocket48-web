@@ -27,7 +27,7 @@ html
         span(class=style.name) <%= info.userName %>
       | <% } %>
     | <% if (!replay) { %>
-    script!= `window.__INITIAL_STATE__ = {"info":<%- infoStr %>}`
+    script!= `window.__INITIAL_STATE__ = {"info":<%- infoStr %>};`
     script(src='/script/es6-promise.min.js')
     script(src='/script/regenerator-runtime.js')
     script(src='/script/flv.min.js')
