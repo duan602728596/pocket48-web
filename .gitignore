@@ -13,6 +13,7 @@ yarn-error.log
 # build
 dist
 src/statics/style/*.json
+logs
 
 # https
 *.crt
