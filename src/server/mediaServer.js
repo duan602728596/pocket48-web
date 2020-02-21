@@ -15,7 +15,7 @@ function mediaServer(isDev, isHttps) {
     },
     http: {
       port: 13346,
-      allow_origin: isDev ? 'http://127.0.0.1:7070' : 'http://www.wbwbwb.top'
+      allow_origin: isDev ? 'http://127.0.0.1:7070' : `http${ isHttps ? 's' : '' }://www.wbwbwb.top`
     }
   };
 
@@ -23,8 +23,7 @@ function mediaServer(isDev, isHttps) {
     config.https = {
       port: 13347,
       key: path.join(__dirname, '../..', env.KEY),
-      cert: path.join(__dirname, '../..', env.CERT),
-      allow_origin: isDev ? 'http://127.0.0.1:7070' : 'https://www.wbwbwb.top'
+      cert: path.join(__dirname, '../..', env.CERT)
     };
   }
 
