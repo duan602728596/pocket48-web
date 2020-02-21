@@ -103,7 +103,7 @@ function liveRouter(router, templateDir) {
     const { liveId } = ctx.params;
     const id = String(liveId);
 
-    if (childMap.id) {
+    if (childMap[id]) {
       clearTimeout(childMap[id]?.timer);
 
       if (childMap[id]) {
