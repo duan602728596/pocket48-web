@@ -24,7 +24,7 @@
     const video = document.getElementById('video');
     const host = isDev
       ? 'http://127.0.0.1:13346'
-      : (protocol === 'http:' ? 'https://www.wbwbwb.top:13347' : 'http://www.wbwbwb.top:13346');
+      : (protocol === 'https:' ? 'https://www.wbwbwb.top:13347' : 'http://www.wbwbwb.top:13346');
     const flvPlayer = flvjs.createPlayer({
       type: 'flv',
       url: `${ host }/live/${ info.liveId }.flv`
