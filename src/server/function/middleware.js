@@ -15,6 +15,11 @@ function middleware(app, router, isDev, isHttps) {
         // 修改协议为https
         urlResult.protocol = 'https:';
 
+        // 修改端口
+        if (isDev) {
+          urlResult.port = '7071';
+        }
+
         ctx.status = 307;
         ctx.set({
           Location: urlResult.href,
