@@ -4,17 +4,10 @@ module.exports = {
   apps: [
     {
       name: 'pocket48-web',
-      script: 'dist/server/index.js',
+      script: 'npm',
+      args: 'run start:https',
       error_file: './logs/app-err.log',
-      out_file: './logs/app-out.log',
-      env: {
-        NODE_ENV: 'production'
-      },
-      env_https: {
-        NODE_ENV: 'production',
-        KEY: 'server.key',
-        CERT: 'server.crt'
-      }
+      out_file: './logs/app-out.log'
     }
   ]
 };
