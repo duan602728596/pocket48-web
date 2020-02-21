@@ -5,7 +5,7 @@ import liveRouter from '../routers/live';
 
 const templateDir = path.join(__dirname, '../../template');
 
-function createRouters(router, isDev) {
+function createRouters(router) {
   indexRouter(router, templateDir);
   apiLivelistRouter(router);
   liveRouter(router, templateDir);

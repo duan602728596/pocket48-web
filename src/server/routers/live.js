@@ -53,7 +53,7 @@ function liveRouter(router, templateDir) {
           '44100',
           '-f',
           'flv',
-          `rtmp://127.0.0.1:13345/live/${ liveId }`
+          `rtmp://127.0.0.1:5367/live/${ liveId }`
         ];
         const child = childProcess.spawn('ffmpeg', processArgs);
 
