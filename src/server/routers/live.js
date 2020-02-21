@@ -86,7 +86,7 @@ function liveRouter(router, templateDir) {
         liveId: content.liveId,
         playStreamPath: decodeURIComponent(content.playStreamPath),
         liveType: content.liveType,
-        title,
+        title: decodeURIComponent(title),
         coverPath,
         userName: content.user.userName
       };

@@ -2,9 +2,15 @@ import { requestLiveList } from '../utils';
 
 function formatData(liveList = []) {
   return liveList.map((item, index) => {
+    let coverPath = item.coverPath;
+
+    if (!/^https?:/.test(coverPath)) {
+      coverPath = `https://source3.48.cn${ coverPath }`;
+    }
+
     return {
       liveId: item.liveId,
-      coverPath: item.coverPath,
+      coverPath,
       title: item.title,
       liveType: item.liveType,
       nickname: item.userInfo.nickname

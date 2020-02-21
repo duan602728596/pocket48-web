@@ -1,5 +1,5 @@
 import path from 'path';
-import { renderFilePromise, requestLiveList } from '../utils';
+import { renderFilePromise, requestLiveList, formatLiveList } from '../utils';
 
 /**
  * content内需要的字段
@@ -24,7 +24,8 @@ function indexRouter(router, templateDir) {
 
       if (res.status === 200) {
         const { liveList = [] } = res?.content ?? {};
-        const html = await renderFilePromise(tmp, { liveList }, { async: true });
+        const fLiveList2 = formatLiveList(liveList);
+        const html = await renderFilePromise(tmp, { liveList: fLiveList2 }, { async: true });
 
         ctx.body = html;
       } else {

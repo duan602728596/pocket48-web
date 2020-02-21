@@ -16,7 +16,7 @@ html
       p(class=style.replay) 回放生成中
       | <% } else { %>
       div(class=style.videoBox)
-        video#video(class=style.video poster!='/proxy/source3<%= info.coverPath %>' controls)
+        video#video(class=style.video poster!='<%= info.coverPath %>' controls)
       h1(class=style.title) <%= info.title %>
       div
         | <% if (info.liveType === 1) { %>

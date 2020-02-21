@@ -64,3 +64,16 @@ export async function requestLiveInfo(body) {
 
   return json;
 }
+
+/* 格式化数据 */
+export function formatLiveList(data) {
+  return data.map((item, index) => {
+    let coverPath = item.coverPath;
+
+    if (!/^https?:/.test(coverPath)) {
+      coverPath = `https://source3.48.cn${ coverPath }`;
+    }
+
+    return { ...item, coverPath };
+  });
+}

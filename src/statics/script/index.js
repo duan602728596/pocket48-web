@@ -38,12 +38,12 @@
 
         for (const item of data.data) {
           const isZhibo = item.liveType === 1,
-            query = `title=${ item.title }&coverPath=${ encodeURIComponent(item.coverPath) }`;
+            query = `title=${ encodeURIComponent(item.title) }&coverPath=${ encodeURIComponent(item.coverPath) }`;
 
           html += `<dl class="${ style.liveListDl }">
             <dt class="${ style.liveListDt }">
               <a href="/live/${ item.liveId }?${ query }" target="_blank">
-                <img src="https://source3.48.cn${ item.coverPath }" alt="${ item.nickname }" loading="lazy">
+                <img src="${ item.coverPath }" alt="${ item.nickname }" loading="lazy">
               </a>
             </dt>
             <dd class="${ style.liveListDd }">
