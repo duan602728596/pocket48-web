@@ -1,3 +1,4 @@
+import './alias';
 import http from 'http';
 import http2 from 'http2';
 import process from 'process';
