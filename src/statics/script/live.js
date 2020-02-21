@@ -40,6 +40,6 @@
       timer = setTimeout(check, 90000);
     };
 
-    timer = setTimeout(check, 90000);
+    check();
   }
 })();
